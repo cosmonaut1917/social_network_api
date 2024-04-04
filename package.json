@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.18.3",
+    "js": "^0.1.0",
+    "mongoose": "^8.2.2",
+    "nosql": "^6.1.0"
+  }
+}
