@@ -51,52 +51,52 @@ module.exports = {
         }
     },
 
-    // addReaction: async ({ params, body }, res) => {
-    //     try {
-    //         const thought = await Thought.findOneAndUpdate(
-    //             { _id: params.thoughtId },
-    //             { $push: { reactions: body } },
-    //             { new: true, runValidators: true }
-    //         );
-    //         if (!thought) {
-    //             return handleNotFound(res, 'No thought found with this id!');
-    //         }
-    //         res.json(thought);
-    //     } catch (error) {
-    //         handleError(res, error);
-    //     }
-    // };
+    async addReaction ({ params, body }, res)  {
+        try {
+            const thought = await Thought.findOneAndUpdate(
+                { _id: params.thoughtId },
+                { $push: { reactions: body } },
+                { new: true, runValidators: true }
+            );
+            if (!thought) {
+                return res.status(404).json({ message: 'No thought found with this id!' });
+            }
+            res.json(thought);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
 
-    // deleteReaction: async ({ params, body }, res) => {
-    //     try {
-    //         const thought = await Thought.findOneAndUpdate(
-    //             { _id: params.thoughtId },
-    //             { $pull: { reactions: { reactionId: params.reactionId } } },
-    //             { new: true, runValidators: true }
-    //         );
-    //         if (!thought) {
-    //             return handleNotFound(res, 'No thought found with this id!');
-    //         }
-    //         res.json(thought);
-    //     } catch (error) {
-    //         handleError(res, error);
-    //     }
-    // };
+async deleteReaction  ({ params, body }, res) {
+        try {
+            const thought = await Thought.findOneAndUpdate(
+                { _id: params.thoughtId },
+                { $pull: { reactions: { reactionId: params.reactionId } } },
+                { new: true, runValidators: true }
+            );
+            if (!thought) {
+                return res.status(404).json({ message: 'No thought found with this id!' });
+            }
+            res.json(thought);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
 
-    // updateThought: async ({ params, body }, res) => {
-    //     try {
-    //         const thought = await Thought.findOneAndUpdate(
-    //             { _id: params.thoughtId },
-    //             { $set: body },
-    //             { new: true, runValidators: true }
-    //         );
-    //         if (!thought) {
-    //             return handleNotFound(res, 'No thought found with this id!');
-    //         }
-    //         res.json(thought);
-    //     } catch (error) {
-    //         handleError(res, error);
-    //     }
-    // }
+    async updateThought ({ params, body }, res)  {
+        try {
+            const thought = await Thought.findOneAndUpdate(
+                { _id: params.thoughtId },
+                { $set: body },
+                { new: true, runValidators: true }
+            );
+            if (!thought) {
+                return res.status(404).json({ message: 'No thought found with this id!' });
+            }
+            res.json(thought);
+        } catch (error) {
+           res.status(500).json(error);
+        }
+    }
 }
 
