@@ -15,26 +15,26 @@ const UserSchema = new Schema({
     },
     thoughts: [
         {
-        type: Schema.Types.ObjectId,
-        ref: 'Thought'
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
         }
     ],
     friends: [
         {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         }
     ]
-    },
+},
     {
-    toJSON: {
-        virtuals: true
-    },
-    id: false
+        toJSON: {
+            virtuals: true
+        },
+        id: false
     }
-    );
-    UserSchema.virtual('friendCount').get(function() {
-        return this.friends.length;
-    });
-    const User = model('User', UserSchema);
-    model.exports = User;
+);
+UserSchema.virtual('friendCount').get(function () {
+    return this.friends.length;
+});
+const User = model('User', UserSchema);
+module.exports = User;
