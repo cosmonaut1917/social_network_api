@@ -22,6 +22,10 @@ To start the server, run `npm start`. The API endpoints can be accessed through 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Video
+https://youtu.be/FriZbDiIBe0
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+## Github
+cosmonaut1917
