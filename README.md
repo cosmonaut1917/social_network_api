@@ -14,16 +14,11 @@ To start the server, run `npm start`. The API endpoints can be accessed through 
 - `GET /users/:id`: Get a single user by id
 - `PUT /users/:id`: Update a user by id
 - `DELETE /users/:id`: Delete a user by id
-- `POST /posts`: Create a new post
-- `GET /posts`: Get all posts
-- `GET /posts/:id`: Get a single post by id
-- `PUT /posts/:id`: Update a post by id
-- `DELETE /posts/:id`: Delete a post by id
-- `POST /comments`: Create a new comment
-- `GET /comments`: Get all comments
-- `GET /comments/:id`: Get a single comment by id
-- `PUT /comments/:id`: Update a comment by id
-- `DELETE /comments/:id`: Delete a comment by id
+- `POST /thoughts`: Create a new thought
+- `GET /thoughts`: Get all thoughts
+- `GET /thoughts/:id`: Get a single thought by id
+- `PUT /thoughts/:id`: Update a thought by id
+- `DELETE /thoughts/:id`: Delete a thought by id
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
